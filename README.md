@@ -1,1 +1,1 @@
-# Javascript
+Pruebas de JavaScript clase
