@@ -1,0 +1,8 @@
+onblur
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onblur_html
+
+onkeyup
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onkeyup
+
+onmouseout
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmouseover_html
