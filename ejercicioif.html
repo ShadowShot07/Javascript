@@ -9,19 +9,20 @@
 <body>
     <script>
         let hora = new Date().getHours();
+        let minutos = new Date().getMinutes();
         let horaPrueba = 15;
         let saludo;
 
         console.log(hora);
-        if (hora <= 8) {
+        if (hora <= 8 && minutos == 59) {
             saludo = "Al que madruga dios le ayuda";
-        } else if (8 < hora && hora <= 12) {
+        } else if (8 < hora && hora <= 12 && minutos == 59) {
             saludo = "Buenos días";
-        } else if (12 < hora && hora <= 16) {
+        } else if (12 < hora && hora <= 16 && minutos == 59) {
             prompt("¿Has comido?", "");
-        } else if (16 < hora && hora <= 20) {
+        } else if (16 < hora && hora <= 20 && minutos == 59) {
             saludo = "Buenas tardes";
-        } else if (20 < hora && hora > 00) {
+        } else if (20 < hora && hora > 00 && minutos == 59) {
             saludo = "Buenas noches";
         }
 
