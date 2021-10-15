@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>if</title>
+</head>
+
+<body>
+    <script>
+        let hora = new Date().getHours();
+        let horaPrueba = 15;
+        let saludo;
+
+        console.log(hora);
+        if (hora <= 8) {
+            saludo = "Al que madruga dios le ayuda";
+        } else if (8 < hora && hora <= 12) {
+            saludo = "Buenos días";
+        } else if (12 < hora && hora <= 16) {
+            prompt("¿Has comido?", "");
+        } else if (16 < hora && hora <= 20) {
+            saludo = "Buenas tardes";
+        } else if (20 < hora && hora > 00) {
+            saludo = "Buenas noches";
+        }
+
+        function pruebaComida() {
+            if (12 < horaPrueba && horaPrueba <= 16) {
+                let comida = prompt("¿Has comido?");
+                comida.toLowerCase();
+                if (comida == "si") {
+                    document.getElementById("comido").innerHTML =
+                    "Bien hecho";
+                } else if (comida == "no") {
+                    document.getElementById("comido").innerHTML = 
+                    "Vayase a comer";
+                }
+            }
+        }
+
+
+        console.log(saludo);
+    </script>
+    <p onmouseout="pruebaComida()">Pon el ratón encima</p>
+    <p id="comido"></p>
+</body>
+
+</html>
