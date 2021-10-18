@@ -5,6 +5,16 @@
     <title>eventos</title>
 </head>
 <body>
-    
+    <input type="text" onblur="myFunction()">
+    <p onmouseout="myFunction()">Si quieres ver la fecha quita el ratón de encima mio</p>
+    <input type="text" onkeyup="myFunction()">
+    <script>
+        let diaNum = new Date().getDate();
+        let mes = new Date().getMonth();
+        let año = new Date().getFullYear();
+        function myFunction() {
+            alert(`${diaNum}/${mes}/${año}`);
+        }
+    </script>
 </body>
 </html>
