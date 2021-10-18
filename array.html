@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+    <h2>Ejercicio 3</h2>
+    <p>Crear un array llamado meses y que almacene el nombre de los doce meses del año. Mostrar por pantalla los doce nombres utilizando la función alert()</p>
+    <script>
+        let meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        meses.forEach(function(elemento, indice, array) {
+            alert(elemento, indice);
+        })
+    </script>
+    <h2>Ejercicio 4</h2>
+    <p>A partir del siguiente array que se proporciona: var valores = [true, 5, false, "hola", "adios", 2]</p>
+    <ul>
+        <li>
+            Determinar cual de los dos elementos de texto es mayor
+        </li>
+        <li>
+            Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false
+        </li>
+        <li>
+            Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numericos
+        </li>
+    </ul>
+    <script>
+        let valores = [true, 5, false, "hola", "adios", 2]
+        let primerNum = valores[1];
+        let segundoNum = valores[5];
+
+        /* Determinar cual de los dos elementos de texto es mayor */
+        let palabras = valores.filter((element) => typeof element === "string");
+        let mayor = (palabras[0].length > palabras[1].length) ? palabras[0] : palabras[1];
+
+        console.log(mayor);
+
+        /* Utilizando exclusivamente los dos valores booleanos del array, determinar los operadores necesarios para obtener un resultado true y otro resultado false */
+        let opeTrue = valores[0] + valores[2];
+        let opeFalse = valores[0] * valores[2];
+
+        console.log(opeTrue);
+        console.log(opeFalse);
+
+        /* Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numericos */
+        let suma = primerNum + segundoNum;
+        console.log(suma);
+
+        let resta = primerNum - segundoNum;
+        console.log(resta);
+
+        let multiplicacion = primerNum * segundoNum;
+        console.log(multiplicacion);
+
+        let division = primerNum / segundoNum;
+        console.log(division);
+
+        let modulo = primerNum % segundoNum;
+        console.log(modulo);
+    </script>
+</body>
+</html>
