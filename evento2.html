@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>eventos</title>
+</head>
+<body>
+    <p>Escribe tu nombre: <input type="text" id="nombre" onblur="myFunctionBlur()" onkeyup="myFunctionKey()" ></p>
+    <p>Mi nombre es: <span id="prueba" onmouseover="myFuntionMouseOver()" onmouseout="myFunctionMouse()"></span></p>
+    <script>
+        function myFuntionMouseOver() {
+            document.getElementById("prueba").style.color = "green";
+        }
+        function myFunctionMouse() {
+            document.getElementById("prueba").style.color = "black";
+        }
+        function myFunctionBlur() {
+            document.getElementById("nombre").style.background = "red";
+        }
+        function myFunctionKey() {
+            let x = document.getElementById("nombre").value;
+            document.getElementById("prueba").innerHTML = x;
+        }
+    </script>
+</body>
+</html>
