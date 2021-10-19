@@ -36,6 +36,9 @@
                 } else if (comida == "no") {
                     document.getElementById("comido").innerHTML = 
                     "Vayase a comer";
+                } else if (comida != "no" && comida != "si") {
+                    document.getElementById("comido").innerHTML =
+                    "Esa respuesta no me vale, dime si o no";
                 }
             }
         }
