@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Despertador</title>
+</head>
+
+<body>
+    <div>
+        <h1>DESPERTADOR Javier Vera Suarez:</h1>
+        <span>Dia de la semana:</span> <input type="text" id="diaS">
+        <span>Dia:</span> <input type="text" id="dia">
+        <span>Mes:</span> <input type="text" id="mes">
+        <br> <br>
+
+        <span>Hora:</span> <input type="text" id="hora">
+        <span>Minuto:</span> <input type="text" id="minuto">
+        <button onclick="setear()">OK!</button>
+        <p id="alarma"></p>
+    </div>
+    <script>
+        function reloj() {
+            // Variables del objeto Date
+            let hoy = new Date();
+            let hora = hoy.getHours();
+            let minuto = hoy.getMinutes();
+            let segundo = hoy.getSeconds();
+            let dia = hoy.getDate();
+            let dSemana = hoy.getDay();
+            let mes = hoy.getMonth();
+
+            // Variables que recogen los datos de los input
+            let dSemanaD = document.getElementById("diaS").value;
+            let diaD = parseInt(document.getElementById("dia").value);
+            let mesD = document.getElementById("mes").value;
+            let horaD = parseInt(document.getElementById("hora").value);
+            let minutoD = parseInt(document.getElementById("minuto").value);
+
+            // Ponerlos en minuscula para que se puedan comparar sin errores
+            dSemanaD = dSemanaD.toLowerCase();
+            mesD = mesD.toLowerCase();
+
+            // Cambiar el string del nombre del dia y del mes y pasarlo a entero para compararlo con las funciones del objeto Date que son enteros
+            if (dSemanaD == "domingo") {
+                dSemanaD = 0;
+            } else if (dSemanaD == "lunes") {
+                dSemanaD = 1;
+            }else if (dSemanaD == "martes") {
+                dSemanaD = 2;
+            }else if (dSemanaD == "miercoles") {
+                dSemanaD = 3;
+            }else if (dSemanaD == "jueves") {
+                dSemanaD = 4;
+            }else if (dSemanaD == "miercoles") {
+                dSemanaD = 5;
+            }else if (dSemanaD == "sabado") {
+                dSemanaD = 6;
+            }
+
+            if (mesD == "enero") {
+                mesD = 0;
+            } else if (mesD == "febrero") {
+                mesD = 1;
+            } else if (mesD == "marzo") {
+                mesD = 2;
+            } else if (mesD == "abril") {
+                mesD = 3;
+            } else if (mesD == "mayo") {
+                mesD = 4;
+            } else if (mesD == "junio") {
+                mesD = 5;
+            } else if (mesD == "julio") {
+                mesD = 6;
+            } else if (mesD == "agosto") {
+                mesD = 7;
+            } else if (mesD == "septiembre") {
+                mesD = 8;
+            } else if (mesD == "octubre") {
+                mesD = 9;
+            } else if (mesD == "noviembre") {
+                mesD = 10;
+            } else if (mesD == "diciembre") {
+                mesD = 11;
+            }
+
+            // Colocar cero delante de los segundos para que tenga los 2 digitos
+            if (segundo < 10) {
+                segundo = "0" + segundo
+            };
+
+            // Cuando sea la hora y fecha a la que se puso abrirá una ventana nueva con un sonido de despertador
+            if (hora == horaD && minuto == minutoD && dia == diaD && dSemanaD == dSemana && mes == mesD && segundo == 00) {
+                window.open("https://www.youtube.com/watch?v=-3q4dWaJChI");
+            };
+            console.log(minuto);
+            console.log(segundo);
+        }
+
+        function setear() {
+            // Variables de los valores recogidos en los input
+            let diaS = document.getElementById("dia").value;
+            let dSemanaS = document.getElementById("diaS").value;
+            let mesS = document.getElementById("mes").value;
+            let horaS = document.getElementById("hora").value;
+            let minutoS = document.getElementById("minuto").value;
+
+            //Hacer que el dia y el mes aparezca con la primera letra en mayuscula
+            dSemanaS = dSemanaS.charAt(0).toUpperCase() + dSemanaS.slice(1);
+            mesS = mesS.charAt(0).toUpperCase() + mesS.slice(1);
+
+            // Mostrar en un p de manera mas clara cuando has colocado el despertador
+            document.getElementById("alarma").innerHTML = `Tu despertador esta puesto para el ${dSemanaS} dia ${diaS} de ${mesS} a las ${horaS}:${minutoS}`;
+        }
+        // Con esto hacemos que se vaya reproduciendo el reloj y se active todo el rato las variables de date y funcione como un reloj sin tener que recargar la pagina
+        setInterval(reloj, 1000);
+    </script>
+</body>
+
+</html>
