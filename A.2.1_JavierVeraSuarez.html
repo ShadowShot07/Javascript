@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings, numbers and arrays</title>
+</head>
+<body>
+    <script>
+        //Exercise 1
+        const months = Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        months.forEach((element) => alert(element));
+
+        //Exercise 2
+        const values = [true, 5, false, "hello", "goodbye", 2];
+        
+        if (values[3].length > values[4].lenght) {
+            console.log("hello is larger");
+        } else {
+            console.log("goodbye is larger");
+        }
+        console.log(`First operator: ${values[0]}`);
+        console.log(`Second operator: ${values[2]}`);
+        
+        let suma = values[1] + values[5];
+        let resta = values[1] - values[5];
+        let multiplicacion = values[1] * values[5];
+        let division = values[1] / values[5];
+        console.log(`La suma es ${suma}, la resta es ${resta}, la división es ${division}, la multiplicación es ${multiplicacion}`)
+    </script>
+</body> 
+</html>
